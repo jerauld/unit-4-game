@@ -143,6 +143,12 @@ $(document).ready(function () {
      // Click To Start
      $("#clickToStart").text("Click anywhere to start");
      new Audio("assets/audio/LOZ_Stairs.wav").play();
+     $('#link').show();
+     $('#link').animate({opacity:0},0)
+     $('#link').animate({opacity: 1.0, top: '-=66px'}, 'slow');
+    //  $('#link').fadeIn('slow');
+
+     
  
      // Initializes Introduction and Game Space
      function clickToStart(){

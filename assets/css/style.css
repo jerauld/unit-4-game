@@ -52,8 +52,9 @@ __________________________________________________________________*/
 
 #link {
     position: absolute;
-    top: -33px;
     left: 32px;
+    top: 33px;
+    display: none;
 }
 
 /* Cave Styling
