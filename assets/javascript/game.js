@@ -2,20 +2,6 @@ $(document).ready(function () {
 
     var wins = 0;
     var losses = 0;
-   
-    $("#clickToStart").text("Click anywhere to start");
-    new Audio("assets/audio/LOZ_Stairs.wav").play();
-    
-    $("#clickToStart").on("click", function(){
-        $("#win-count").text(wins);
-        $("#loss-count").text(wins);
-        $("#win-header").text("wins");
-        $("#loss-header").text("losses");
-        $("#number-to-guess").text(targetNumber);
-        $("#user-total-score").text(counter);
-        $("#clickToStart").addClass("isHidden");
-        generateRupees();
-    });
 
     var getRandomIntInclusive = function (min, max) {
         min = Math.ceil(min);
@@ -80,7 +66,7 @@ $(document).ready(function () {
     var counter = 0;
 
 
-    var rupeeImageArray = ["assets/images/gem-purple.png", "assets/images/gem-red.png", "assets/images/gem-blue.png", "assets/images/gem-green.png"]
+    var rupeeImageArray = ["assets/images/rupee-purple.png", "assets/images/rupee-red.png", "assets/images/rupee-blue.png", "assets/images/rupee-green.png"]
 
     function generateRupees() {
 
@@ -98,23 +84,23 @@ $(document).ready(function () {
         generateNumberOptions();
 
         for (var i = 0; i < rupeeImageArray.length; i++) {
-            var imageCrystal = $("<img>");
-            imageCrystal.addClass("crystal-image");
-            imageCrystal.attr("src", rupeeImageArray[i]);
-            imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-            $("#crystals").append(imageCrystal);
+            var imageRupee = $("<img>");
+            imageRupee.addClass("rupee-image");
+            imageRupee.attr("src", rupeeImageArray[i]);
+            imageRupee.attr("data-rupeevalue", numberOptions[i]);
+            $("#rupees").append(imageRupee);
         }
     }
 
     
-
-    $(document).on("click", ".crystal-image", function () {
+    
+    $(document).on("click", ".rupee-image", function () {
         if ((j >= txtIntro.length) && (txtFinished) && (roundFinished === false)) {
             $("#demo").text("");
             new Audio("assets/audio/LOZ_Get_Rupee.wav").play();
-            var crystalValue = ($(this).attr("data-crystalvalue"));
-            crystalValue = parseInt(crystalValue);
-            counter += crystalValue;
+            var rupeeValue = ($(this).attr("data-rupeevalue"));
+            rupeeValue = parseInt(rupeeValue);
+            counter += rupeeValue;
             $("#user-total-score").text(counter);
 
             if (counter === targetNumber) {
@@ -137,6 +123,23 @@ $(document).ready(function () {
         }
     });
 
+     // Click To Start
+     $("#clickToStart").text("Click anywhere to start");
+     new Audio("assets/audio/LOZ_Stairs.wav").play();
+ 
+     // Initializes Introduction and Game Space
+     $("#clickToStart").on("click", function(){
+         $("#win-count").text(wins);
+         $("#loss-count").text(wins);
+         $("#win-header").text("wins");
+         $("#loss-header").text("losses");
+         $("#number-to-guess").text(targetNumber);
+         $("#user-total-score").text(counter);
+         $("#clickToStart").addClass("isHidden");
+         generateRupees();
+     });
+
+     // New Round Reset
     function resetGame() {
         //Clear Round Ending Message
         $("#demo").text("");
@@ -146,8 +149,8 @@ $(document).ready(function () {
         //Reset User Score
         counter = 0;
         $("#user-total-score").text(counter);
-        //Generate New Crystals
-        $( ".crystal-image" ).remove();
+        //Generate New Rupees
+        $( ".rupee-image" ).remove();
         generateRupees();
         //Round is Finished
         roundFinished = false;
