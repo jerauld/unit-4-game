@@ -18,6 +18,7 @@ $(document).ready(function () {
     // Dialogue and Game Controllers
     var txtFinished = true;
     var roundFinished = false;
+    var gameStarted = false;
     var j = 0;
 
 
@@ -34,7 +35,7 @@ $(document).ready(function () {
                 clearInterval(timer);
                 txtFinished = true;
             }
-        }, 75);
+        }, 50);
     };
 
     //On Click Introduction Text
@@ -53,13 +54,13 @@ $(document).ready(function () {
         }
         
         if (j === 1) {
-            clickToStart();
+            clickToStart(); 
             $("#skip-intro").text("Click here to skip intro");
         } else if (j >= txtIntro.length) {
             $("#skip-intro").addClass("isHidden");
         }
     });
-
+    
     // On Click Skip Intro
     $("#skip-intro").on("click", function () {
         if (txtFinished) {
@@ -72,6 +73,7 @@ $(document).ready(function () {
         }
     });
 
+    
     // Generate Random Target Number
     var targetNumber = getRandomIntInclusive(19, 120);
 
@@ -84,7 +86,6 @@ $(document).ready(function () {
 
     // Generate Rupees Function
     function generateRupees() {
-        
         //Generate Number Options
         var generateNumberOptions = function () {
             while (numberOptions.length < 4) {
@@ -97,7 +98,9 @@ $(document).ready(function () {
 
         var numberOptions = [];
 
+        
         generateNumberOptions();
+        
 
         //Generate Rupee Images with Values
         for (var i = 0; i < rupeeImageArray.length; i++) {
@@ -145,13 +148,14 @@ $(document).ready(function () {
      new Audio("assets/audio/LOZ_Stairs.wav").play();
      $('#link').show();
      $('#link').animate({opacity:0},0)
-     $('#link').animate({opacity: 1.0, top: '-=66px'}, 1000);
+     $('#link').animate({opacity: 1.0, top: '-=66px'}, 1000); 
     //  $('#link').fadeIn('slow');
 
-     
+    
  
      // Initializes Introduction and Game Space
      function clickToStart(){
+         if (gameStarted === false) {
          $("#win-count").text(wins);
          $("#loss-count").text(wins);
          $("#win-header").text("wins");
@@ -160,6 +164,9 @@ $(document).ready(function () {
          $("#userCounter").text(counter);
          $("#clickToStart").addClass("isHidden");
          generateRupees();
+         gameStarted = true;
+         } 
+         
      }
 
      // New Round Reset
