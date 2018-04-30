@@ -12,7 +12,7 @@ $(document).ready(function () {
     }
 
     // Game Dialogue
-    var txtIntro = ["Let's play a number matching game!", "I have a magic number.", "Click on the four rupees to match my magic number.", "The value of each rupee is a secret to everybody.", "Click on a rupee to get started..."];
+    var txtIntro = ["Let's play a number matching game!", "I have a magic number.", "Click on the four rupees to match my magic number.", "The value of each rupee is a secret to everybody.", "Click on a rupee to get started."];
     var txtResult = ["You win! Click anywhere to play again!", "You lose! Click anywhere to try again!"]
 
     // Dialogue and Game Controllers
