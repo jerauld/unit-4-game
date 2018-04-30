@@ -1,20 +1,27 @@
 $(document).ready(function () {
 
+    //Set Wins Loss to Zero
     var wins = 0;
     var losses = 0;
 
+    // Custom Random Number Generator (No Repeats)
     var getRandomIntInclusive = function (min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
+    // Game Dialogue
     var txtIntro = ["Let's play a number matching game!", "I have a magic number.", "Click on the four rupees to match my magic number.", "The value of each rupee is a secret to everybody.", "Click on a rupee to get started..."];
     var txtResult = ["You win! Click anywhere to play again!", "You lose! Click anywhere to try again!"]
+
+    // Dialogue and Game Controllers
     var txtFinished = true;
     var roundFinished = false;
     var j = 0;
 
+
+    // Custom Retro Type Function
     var typeWriter = function (arr, num) {
         var txt = arr;
         var i = 0;
@@ -30,6 +37,7 @@ $(document).ready(function () {
         }, 75);
     };
 
+    //On Click Introduction Text
     $(document).on("click", function () {
         if (j >= txtIntro.length) {
             if (roundFinished && txtFinished) {
@@ -45,12 +53,14 @@ $(document).ready(function () {
         }
         
         if (j === 1) {
+            clickToStart();
             $("#skip-intro").text("Click here to skip intro");
         } else if (j >= txtIntro.length) {
             $("#skip-intro").addClass("isHidden");
         }
     });
 
+    // On Click Skip Intro
     $("#skip-intro").on("click", function () {
         if (txtFinished) {
             txtFinished = false;
@@ -62,14 +72,20 @@ $(document).ready(function () {
         }
     });
 
+    // Generate Random Target Number
     var targetNumber = getRandomIntInclusive(19, 120);
+
+    // Set User Counter
     var counter = 0;
 
-
+    // Rupee Image Array
     var rupeeImageArray = ["assets/images/rupee-purple.png", "assets/images/rupee-red.png", "assets/images/rupee-blue.png", "assets/images/rupee-green.png"]
 
-    function generateRupees() {
 
+    // Generate Rupees Function
+    function generateRupees() {
+        
+        //Generate Number Options
         var generateNumberOptions = function () {
             while (numberOptions.length < 4) {
                 var randomNumber = getRandomIntInclusive(2, 12);
@@ -83,6 +99,7 @@ $(document).ready(function () {
 
         generateNumberOptions();
 
+        //Generate Rupee Images with Values
         for (var i = 0; i < rupeeImageArray.length; i++) {
             var imageRupee = $("<img>");
             imageRupee.addClass("rupee-image");
@@ -93,7 +110,7 @@ $(document).ready(function () {
     }
 
     
-    
+    // On Click Rupee Functions
     $(document).on("click", ".rupee-image", function () {
         if ((j >= txtIntro.length) && (txtFinished) && (roundFinished === false)) {
             $("#demo").text("");
@@ -101,7 +118,7 @@ $(document).ready(function () {
             var rupeeValue = ($(this).attr("data-rupeevalue"));
             rupeeValue = parseInt(rupeeValue);
             counter += rupeeValue;
-            $("#user-total-score").text(counter);
+            $("#userCounter").text(counter);
 
             if (counter === targetNumber) {
                 new Audio("assets/audio/LOZ_Secret.wav").play();
@@ -128,16 +145,16 @@ $(document).ready(function () {
      new Audio("assets/audio/LOZ_Stairs.wav").play();
  
      // Initializes Introduction and Game Space
-     $("#clickToStart").on("click", function(){
+     function clickToStart(){
          $("#win-count").text(wins);
          $("#loss-count").text(wins);
          $("#win-header").text("wins");
          $("#loss-header").text("losses");
          $("#number-to-guess").text(targetNumber);
-         $("#user-total-score").text(counter);
+         $("#userCounter").text(counter);
          $("#clickToStart").addClass("isHidden");
          generateRupees();
-     });
+     }
 
      // New Round Reset
     function resetGame() {
@@ -148,7 +165,7 @@ $(document).ready(function () {
         $("#number-to-guess").text(targetNumber);
         //Reset User Score
         counter = 0;
-        $("#user-total-score").text(counter);
+        $("#userCounter").text(counter);
         //Generate New Rupees
         $( ".rupee-image" ).remove();
         generateRupees();
