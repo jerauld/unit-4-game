@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Crystal Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <img class="zelda-stats" src="assets/images/zelda-stats.png" />
+        </div>
+    </header>
+
+    <div class="container-fluid cave-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron mx-auto">
+                        <div class="row cave ">
+                            <div class="col-md-12">
+                                <div class="row text-block">
+                                    <p class="text-message">
+                                        <span id="demo"></span>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <img src="assets/images/fire.png">
+                                        <img id="old-man" src="assets/images/old-man.png" />
+                                        <img src="assets/images/fire.png">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p class="magicNumber">
+                                            <span id="number-to-guess"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row crystalContainer">
+                                    <div class="col-xs-3">
+                                        <p class="score-display-left"><span id="win-header"></span></p>
+                                        <p class="score-display-left">
+                                            <span id="win-count"></span>
+                                        </p>
+                                    </div>
+                                    <div class="col-xs-6 mx-auto">
+                                        <div id="crystals"></div>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <p class="score-display-right"><span id="loss-header"></span></p>
+                                        <p class="score-display-right">
+                                            <span id="loss-count"></span>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p class="totalScore">
+                                            <span id="user-total-score"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cave-entrance">
+                            <div class="col-100 entrance-block">
+                                <img id="link" src="assets/images/link.png" />
+                            </div>
+                        </div>
+                        <div class="row cave-entrance2">
+                            <div class="col-100 entrance-block2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+
+        <p></p>
+        <p>
+        </p>
+        <p>
+            <span id="skip-intro"></span>
+        </p>
+
+
+    </footer>
+
+
+
+
+
+
+
+
+    <!-- JAVASCRIPT  -->
+    <!-- ========================================= -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="assets/javascript/game.js" type="text/javascript"></script>
+
+</body>
+
+</html>

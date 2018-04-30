@@ -1,0 +1,120 @@
+
+body {
+    background-color: black;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    }
+
+header {
+    background-color:black;
+    height: 168px;
+}
+
+.zelda-stats {
+    margin-top: 48px;
+}
+
+.jumbotron {
+    width: 580px;
+    height: 410px;
+    padding: 0;
+    background-color: transparent;
+    margin-bottom:0;
+}
+
+.text-block {
+    height: 99px;
+}
+
+p.text-message {
+    margin: 24px 24px 5px 24px;
+    height: 70px;
+    width: 560px;
+}
+
+#old-man {
+    margin: 0 99px;
+}
+
+.magicNumber  {
+    height: 10px;
+    margin: 10px;
+}
+
+.isHidden {
+    display: none;
+}
+
+.cave-background {
+    padding-top: 96px;
+    background-image: url("../images/background.png");
+}
+
+.cave {
+    width: 100%;
+    height: 339px;
+    margin: 0 auto;
+    background-color: black;
+}
+
+.cave-entrance {
+    height: 41px;
+    margin: 0 auto;
+    background: url("../images/entrance-background.png");
+    
+}
+
+.entrance-block {
+    height: 41px;
+    width: 100px; 
+    margin: 0 auto;
+    background-color: black;
+    position: relative;
+}
+
+#link {
+    position: absolute;
+    top: -33px;
+    left: 32px;
+}
+
+.cave-entrance2 {
+    margin: 0 auto;
+    height: 30px;
+
+}
+
+.entrance-block2 {
+    height: 30px;
+    width: 100px; 
+    margin: 0 auto;
+    background-color: black;
+}
+
+.container-fluid.faded-cave-background {
+    height: 100%;
+}
+
+.crystal-image {
+    margin: 0 20px;
+}
+
+.crystalContainer {
+    margin-top: 30px;
+}
+
+.totalScore {
+    margin-top: 18px;
+}
+
+p.score-display-right {
+    margin-bottom: 0;
+    margin-right: 50px;
+}
+
+p.score-display-left {
+    margin-bottom: 0;
+    margin-left: 50px;
+}
