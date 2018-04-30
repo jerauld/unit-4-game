@@ -145,7 +145,7 @@ $(document).ready(function () {
      new Audio("assets/audio/LOZ_Stairs.wav").play();
      $('#link').show();
      $('#link').animate({opacity:0},0)
-     $('#link').animate({opacity: 1.0, top: '-=66px'}, 'slow');
+     $('#link').animate({opacity: 1.0, top: '-=66px'}, 1000);
     //  $('#link').fadeIn('slow');
 
      
