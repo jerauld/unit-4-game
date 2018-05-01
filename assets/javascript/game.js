@@ -52,7 +52,7 @@ $(document).ready(function () {
             txtFinished = false;
             j++;
         }
-        
+        //On Click Game Start Sequence
         if (j === 1) {
             clickToStart(); 
             $("#skip-intro").text("Click here to skip intro");
@@ -143,30 +143,30 @@ $(document).ready(function () {
         }
     });
 
-     // Click To Start
-     $("#clickToStart").text("Click anywhere to start");
-     new Audio("assets/audio/LOZ_Stairs.wav").play();
-     $('#link').show();
-     $('#link').animate({opacity:0},0)
-     $('#link').animate({opacity: 1.0, top: '-=66px'}, 1000); 
+    // Click To Start
+    $("#clickToStart").text("Click anywhere to start");
+    new Audio("assets/audio/LOZ_Stairs.wav").play();
+    $('#link').show();
+    $('#link').animate({opacity:0},0)
+    $('#link').animate({opacity: 1.0, top: '-=66px'}, 1000); 
 
     
  
-     // Initializes Introduction and Game Space
-     function clickToStart(){
-         if (gameStarted === false) {
-         $("#win-count").text(wins);
-         $("#loss-count").text(wins);
-         $("#win-header").text("wins");
-         $("#loss-header").text("losses");
-         $("#number-to-guess").text(targetNumber);
-         $("#userCounter").text(counter);
-         $("#clickToStart").addClass("isHidden");
-         generateRupees();
-         gameStarted = true;
-         } 
+    // Initializes Introduction and Game Space
+    function clickToStart(){
+        if (gameStarted === false) {
+        $("#win-count").text(wins);
+        $("#loss-count").text(wins);
+        $("#win-header").text("wins");
+        $("#loss-header").text("losses");
+        $("#number-to-guess").text(targetNumber);
+        $("#userCounter").text(counter);
+        $("#clickToStart").addClass("isHidden");
+        generateRupees();
+        gameStarted = true;
+        } 
          
-     }
+    }
 
      // New Round Reset
     function resetGame() {
