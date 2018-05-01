@@ -4,7 +4,7 @@ $(document).ready(function () {
     var wins = 0;
     var losses = 0;
 
-    // Custom Random Number Generator (No Repeats)
+    // Custom Random Number Generator (See Generate Rupees Function for Random Numbers Arrary No Repeats)
     var getRandomIntInclusive = function (min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -86,7 +86,7 @@ $(document).ready(function () {
 
     // Generate Rupees Function
     function generateRupees() {
-        //Generate Number Options
+        //Generate Random Number Options (No Repeats)
         var generateNumberOptions = function () {
             while (numberOptions.length < 4) {
                 var randomNumber = getRandomIntInclusive(2, 12);
@@ -149,7 +149,6 @@ $(document).ready(function () {
      $('#link').show();
      $('#link').animate({opacity:0},0)
      $('#link').animate({opacity: 1.0, top: '-=66px'}, 1000); 
-    //  $('#link').fadeIn('slow');
 
     
  
