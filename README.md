@@ -24,6 +24,7 @@ Zelda Rupee Game was created for the `unit-4-game` homework assignemnt for Berke
 **Personal Game Design Notes**
 
 -Fonts: Google Fonts, Press Start 2P
+
 -Random Number
 
     ``` Javascript
