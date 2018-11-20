@@ -1,10 +1,14 @@
 # unit-4-game
 
-**Overview**
+## Overview
 
 Zelda Rupee Game was created for the `unit-4-game` homework assignemnt for Berkeley Coding Bootcamp based on the CrystalsCollector Game demo. It is a fun and interactive game for web browsers that dynamically updates the HTML page with the jQuery library.
 
-**Requirements**
+## Demo (GitHub Pages)
+
+https://julienshim.github.io/unit-4-game/
+
+## Requirements
 
 - There will be four crystals displayed on the page.
 - The player will be shown random numbers at the start of the game.
@@ -16,12 +20,12 @@ Zelda Rupee Game was created for the `unit-4-game` homework assignemnt for Berke
 - When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
 - The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
 
-**Game Design Notes**
+## Game Design Notes
 
 -The random number shown at the start of the game should be between 19-120.
 -Each crystal should have a random hidden value between 1-12.
 
-**Personal Game Design Notes**
+### Personal Game Design Notes
 
 -Fonts: Google Fonts, Press Start 2P
 
@@ -91,3 +95,7 @@ Zelda Rupee Game was created for the `unit-4-game` homework assignemnt for Berke
     - What made me opt for the CrystalsCollector concept rather than the RPG was the opportunity to utilize all skills learned up until this point. Zelda made allowed me to be creative via the constraint being true to the game.
     - Images, Photoshop splicing of game screenshots then scaling, and editing.
     - Had to use a controller to control intro, rounds, and txt output to prevent text looping over each other and unwanted rupees being generated.
+    
+## Screentshot
+
+<img src="https://raw.githubusercontent.com/julienshim/unit-4-game/master/assets/images/screenshot.png" width="500" />
